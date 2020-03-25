@@ -8,7 +8,7 @@ using namespace std;
 
 void main()
 {
-	//init();
+	init();
 	int a = 0;
 	do
 	{
@@ -17,6 +17,7 @@ void main()
 		cout << "3 - pass  the quiz" << endl;
 		cout << "0 - exit" << endl;
 		cin >> a;
+		CLEAR
 		switch (a)
 		{
 		case 1:

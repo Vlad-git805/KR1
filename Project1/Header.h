@@ -6,6 +6,9 @@
 
 using namespace std;
 
+#define PAUSE system("pause");
+#define CLEAR system("cls");
+
 struct Questions
 {
 	string question1;
