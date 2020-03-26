@@ -9,107 +9,6 @@ int countQuiz = 0;
 
 void init()
 {
-	//int currentString = 0;
-	//int currentString2 = 0;
-	//string data;
-	//ifstream fin;
-	//fin.open();
-	//bool isOpen = fin.is_open();
-	//if (isOpen == false)
-	//{
-	//	cout << "Error" << endl;
-	//}
-	//else
-	//{
-	//	while (!fin.eof())
-	//	{
-	//		currentString++;
-	//		//getline(fin, data);
-	//		if (currentString == 1)
-	//		{
-	//		}
-	//		else if (currentString == 2)
-	//		{
-	//		}
-	//		else if (currentString == 3)
-	//		{
-	//		}
-	//		else if (currentString == 4)
-	//		{
-	//		}
-	//		else if (currentString == 5)
-	//		{
-	//		}
-	//		else if (currentString == 6)
-	//		{
-	//		}
-	//		else if (currentString == 7)
-	//		{
-	//			currentString2++;
-	//			currentString = 0;
-	//			/*push_back(oldEmployee);
-	//			oldEmployee = Employee();*/
-	//		}
-	//	}
-	//}
-	//fin.close();
-	//Employee * newemployee2 = new Employee[currentString2];
-	//fin.open(fileName);
-	//bool isOpen = fin.is_open();
-	//if (isOpen == false)
-	//{
-	//	cout << "Error" << endl;
-	//}
-	//else
-	//{
-	//	while (!fin.eof())
-	//	{
-	//		currentString++;
-	//		getline(fin, data);
-	//		for (int i = 0; i < currentString2; i++)
-	//		{
-	//			currentString++;
-	//			getline(fin, data);
-	//			for (int j = 0; j < currentString2; j++)
-	//			{
-	//				if (currentString == 1)
-	//				{
-	//					newemployee2[i].name = data;
-	//					break;
-	//				}
-	//				else if (currentString == 2)
-	//				{
-	//					newemployee2[i].surname = data;
-	//				}
-	//				else if (currentString == 3)
-	//				{
-	//					newemployee2[i].education = data;
-	//				}
-	//				else if (currentString == 4)
-	//				{
-	//					newemployee2[i].age = data;
-	//				}
-	//				else if (currentString == 5)
-	//				{
-	//					newemployee2[i].createDateOfBirth.day = data;
-	//				}
-	//				else if (currentString == 6)
-	//				{
-	//					newemployee2[i].createDateOfBirth.month = data;
-	//				}
-	//				else if (currentString == 7)
-	//				{
-	//					newemployee2[i].createDateOfBirth.year = data;
-	//					currentString = 0;
-	//					/*push_back(oldEmployee);
-	//					oldEmployee = Employee();*/
-	//				}
-	//			}
-	//		}
-	//	}
-	//}
-	//fin.close();
-
 	int currentString = 0;
 	int currentString2 = 0;
 	string data;
@@ -128,7 +27,6 @@ void init()
 			getline(fin, data);
 		}
 		currentString2 = (currentString - 1) / 11;
-		//cout << currentString2 << endl;
 		currentString = 0;
 	}
 	fin.close();
@@ -153,67 +51,56 @@ void init()
 				{
 					temp1[i].question = new Questions[5];
 					temp1[i].nameQuiz = data;
-					//cout << temp[i].nameQuiz << endl;
 					break;
 				}
 				else if (currentString == 2)
 				{
 					temp1[i].question[0].question1 = data;
-					//cout << temp[i].question[0].question1 << endl;
 					break;
 				}
 				else if (currentString == 3)
 				{
 					temp1[i].question[0].answer = data;
-					//cout << temp[i].question[0].answer << endl;
 					break;
 				}
 				else if (currentString == 4)
 				{
 					temp1[i].question[1].question1 = data;
-					//cout << temp[i].question[1].question1 << endl;
 					break;
 				}
 				else if (currentString == 5)
 				{
 					temp1[i].question[1].answer = data;
-					//cout << temp[i].question[1].answer << endl;
 					break;
 				}
 				else if (currentString == 6)
 				{
 					temp1[i].question[2].question1 = data;
-					//cout << temp[i].question[2].question1 << endl;
 					break;
 				}
 				else if (currentString == 7)
 				{
 					temp1[i].question[2].answer = data;
-					//cout << temp[i].question[2].answer << endl;
 					break;
 				}
 				else if (currentString == 8)
 				{
 					temp1[i].question[3].question1 = data;
-					//cout << temp[i].question[3].question1 << endl;
 					break;
 				}
 				else if (currentString == 9)
 				{
 					temp1[i].question[3].answer = data;
-					//cout << temp[i].question[3].answer << endl;
 					break;
 				}
 				else if (currentString == 10)
 				{
 					temp1[i].question[4].question1 = data;
-					//cout << temp[i].question[4].question1 << endl;
 					break;
 				}
 				else if (currentString == 11)
 				{
 					temp1[i].question[4].answer = data;
-					//cout << temp[i].question[4].answer << endl;
 					currentString = 0;
 					f++;
 					break;
@@ -223,7 +110,6 @@ void init()
 		quiz = temp1;
 	}
 	fin.close();
-	//system("pause");
 }
 
 void addQuiz()
@@ -242,7 +128,8 @@ void addQuiz()
 		temp[countQuiz].question = new Questions[5];
 		//Вносимо данні про нову вікторину
 		cout << "Enter name of quiz" << endl;
-		cin >> temp[countQuiz].nameQuiz;
+		//cin >> temp[countQuiz].nameQuiz;
+		addNameQuiz(temp);
 		cout << "Enter questions" << endl;
 		for (int i = 0; i < 5; i++)
 		{
@@ -268,6 +155,7 @@ void addQuiz()
 	{
 		cout << "Error" << endl;
 	}
+	CLEAR
 }
 
 void listOfQuiz()
@@ -310,6 +198,21 @@ void passTheQuiz()
 			}
 			cout << "You have " << countResult << " right answer" << endl;
 		}
-
 	}
+	PAUSE
+	CLEAR
+}
+
+void addNameQuiz(Quiz *temp)
+{
+	cin >> temp[countQuiz].nameQuiz;
+	for (int i = 0; i < countQuiz; i++)
+	{
+		if (temp[countQuiz].nameQuiz == quiz[i].nameQuiz)
+		{
+			cout << "This name already exists, enter another name" << endl;
+			addNameQuiz(temp);
+		}
+	}
+	return;
 }

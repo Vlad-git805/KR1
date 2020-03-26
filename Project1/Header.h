@@ -25,3 +25,4 @@ void init();
 void addQuiz();
 void listOfQuiz();
 void passTheQuiz();
+void addNameQuiz(Quiz *temp);
